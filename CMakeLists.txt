@@ -28,7 +28,7 @@ set(SAMPLES
     Downsample
     HandEyeCalibration/UtilizeEyeInHandCalibration
     HandEyeCalibration/PoseConversions
-    MaskingROI/MaskingROI)
+    MaskingROI)
 
 set(Eigen3_DEPENDING Downsample UtilizeEyeInHandCalibration PoseConversions)
 set(PCL_DEPENDING ReadPCLVis3D CaptureWritePCLVis3D CaptureFromFileWritePCLVis3D ZDF2PCD MaskingROI)
