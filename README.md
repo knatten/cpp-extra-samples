@@ -44,6 +44,11 @@ Check out our [tutorial on configuring and building these samples on Ubuntu](htt
 	- **Dependencies:**
 		- [OpenCV](https://opencv.org/) version 4.0.1-dev or newer
 		- [Eigen](http://eigen.tuxfamily.org/) version 3.3.7 or newer
+        
+- [**MaskedROI**](https://github.com/zivid/cpp-extra-samples/tree/master/MaskedROI)  - This example shows how to import a ZDF point cloud, mask it using OpenCV, and convert it to PCL format.
+	- **Dependencies:**
+		- [OpenCV](https://opencv.org/) version 4.0.1-dev or newer
+		- [PCL](http://pointclouds.org/) version 1.9.1
 
 ## Instructions
 

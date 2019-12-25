@@ -27,11 +27,12 @@ set(SAMPLES
     ZividOpenCV/CaptureUndistortRGB
     Downsample
     HandEyeCalibration/UtilizeEyeInHandCalibration
-    HandEyeCalibration/PoseConversions)
+    HandEyeCalibration/PoseConversions
+    MaskingROI/MaskingROI)
 
 set(Eigen3_DEPENDING Downsample UtilizeEyeInHandCalibration PoseConversions)
-set(PCL_DEPENDING ReadPCLVis3D CaptureWritePCLVis3D CaptureFromFileWritePCLVis3D ZDF2PCD)
-set(OpenCV_DEPENDING ZDF2OpenCV CaptureUndistortRGB UtilizeEyeInHandCalibration PoseConversions)
+set(PCL_DEPENDING ReadPCLVis3D CaptureWritePCLVis3D CaptureFromFileWritePCLVis3D ZDF2PCD MaskingROI)
+set(OpenCV_DEPENDING ZDF2OpenCV CaptureUndistortRGB UtilizeEyeInHandCalibration PoseConversions MaskingROI)
 set(Vis3D_DEPENDING Downsample CaptureFromFileWritePCLVis3D CaptureWritePCLVis3D ZDF2OpenCV CaptureHDRLoop CaptureHDRCompleteSettings ReadZDF CaptureUndistortRGB)
 
 find_package(Zivid ${ZIVID_VERSION} COMPONENTS Core REQUIRED)
