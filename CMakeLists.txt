@@ -20,6 +20,7 @@ set(SAMPLES
     Camera/Basic/CaptureHDRCompleteSettings
     Camera/InfoUtilOther/CameraUserData
     Camera/InfoUtilOther/GetCameraIntrinsics
+    Applications/Basic/CaptureHDRLoop
     Applications/Basic/Visualization/CaptureFromFileVis3D
     Applications/Basic/Visualization/CaptureLiveVis3D
     Applications/Basic/Visualization/CaptureVis3D
