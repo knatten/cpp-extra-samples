@@ -38,39 +38,39 @@ namespace
         return CommandType::cmdUnknown;
     }
 
-    Zivid::Calibration::Pose enterRobotPose(size_t index)
-    {
-        std::cout << "Enter pose with id (a line with 16 space separated values describing 4x4 row-major matrix) : "
-                  << index << std::endl;
-        std::stringstream input(getInput());
-        double element{ 0 };
-        std::vector<double> transformElements;
-        for(size_t i = 0; i < 16 && input >> element; ++i)
-        {
-            transformElements.emplace_back(element);
-        }
-
-        const auto robotPose{ Zivid::Matrix4d{ transformElements.cbegin(), transformElements.cend() } };
-        std::cout << "The following pose was entered: \n" << robotPose << std::endl;
-
-        return robotPose;
-    }
-
-    Zivid::Frame acquireCheckerboardFrame(Zivid::Camera &camera)
-    {
-        std::cout << "Capturing checkerboard image... " << std::flush;
-        auto settings{ Zivid::Settings{} };
-        settings.set(Zivid::Settings::Iris{ 17 });
-        settings.set(Zivid::Settings::Gain{ 1.0 });
-        settings.set(Zivid::Settings::Brightness{ 1.0 });
-        settings.set(Zivid::Settings::ExposureTime{ std::chrono::microseconds{ 20000 } });
-        settings.set(Zivid::Settings::Filters::Gaussian::Enabled::yes);
-        camera.setSettings(settings);
-        const auto frame = camera.capture();
-        std::cout << "OK" << std::endl;
-
-        return frame;
-    }
+//    Zivid::Calibration::Pose enterRobotPose(size_t index)
+//    {
+//        std::cout << "Enter pose with id (a line with 16 space separated values describing 4x4 row-major matrix) : "
+//                  << index << std::endl;
+//        std::stringstream input(getInput());
+//        double element{ 0 };
+//        std::vector<double> transformElements;
+//        for(size_t i = 0; i < 16 && input >> element; ++i)
+//        {
+//            transformElements.emplace_back(element);
+//        }
+//
+//        const auto robotPose{ Zivid::Matrix4d{ transformElements.cbegin(), transformElements.cend() } };
+//        std::cout << "The following pose was entered: \n" << robotPose << std::endl;
+//
+//        return robotPose;
+//    }
+//
+//    Zivid::Frame acquireCheckerboardFrame(Zivid::Camera &camera)
+//    {
+//        std::cout << "Capturing checkerboard image... " << std::flush;
+//        auto settings{ Zivid::Settings{} };
+//        settings.set(Zivid::Settings::Iris{ 17 });
+//        settings.set(Zivid::Settings::Gain{ 1.0 });
+//        settings.set(Zivid::Settings::Brightness{ 1.0 });
+//        settings.set(Zivid::Settings::ExposureTime{ std::chrono::microseconds{ 20000 } });
+//        settings.set(Zivid::Settings::Filters::Gaussian::Enabled::yes);
+//        camera.setSettings(settings);
+//        const auto frame = camera.capture();
+//        std::cout << "OK" << std::endl;
+//
+//        return frame;
+//    }
 } // namespace
 
 int main()
@@ -82,7 +82,7 @@ int main()
         std::cout << "Connecting to camera..." << std::endl;
         auto camera{ zivid.connectCamera() };
 
-        size_t currPoseId{ 0 };
+//        size_t currPoseId{ 0 };
         bool calibrate{ false };
         std::vector<Zivid::Calibration::HandEyeInput> input;
         do
@@ -93,9 +93,9 @@ int main()
                 {
                     try
                     {
-                        const auto robotPose = enterRobotPose(currPoseId);
-
-                        const auto frame = acquireCheckerboardFrame(camera);
+//                        const auto robotPose = enterRobotPose(currPoseId);
+//
+//                        const auto frame = acquireCheckerboardFrame(camera);
 
                         std::cout << "Detecting checkerboard square centers... " << std::flush;
 //                        const auto result = Zivid::HandEye::detectFeaturePoints(frame.getPointCloud());
