@@ -21,8 +21,9 @@ int main()
         std::cout << "Capture a 2D frame" << std::endl;
         auto frame = camera.capture2D(settings);
 
-        std::cout << "Get RGBA8 image from Frame2D" << std::endl;
-        auto image = frame.image<Zivid::RGBA8>();
+        std::cout << "Get Color4b image from Frame2D" << std::endl;
+        auto image = frame.image();
+
 
         std::cout << "Get pixel color at row=100, column=50" << std::endl;
         auto pixel = image(100, 50);

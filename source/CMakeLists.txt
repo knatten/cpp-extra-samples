@@ -5,7 +5,7 @@ project(CppExtraSamples)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 include(CompilerOptions)
 
-set(ZIVID_VERSION 1.8.0)
+set(ZIVID_VERSION 2.0.0)
 
 option(USE_EIGEN3 "Enable samples which depend on Eigen 3" ON)
 option(USE_OPENCV "Enable samples which depend on OpenCV" ON)
@@ -20,7 +20,6 @@ set(SAMPLES
     Camera/InfoUtilOther/CameraUserData
     Camera/InfoUtilOther/GetCameraIntrinsics
     Applications/Basic/Visualization/CaptureFromFileVis3D
-    Applications/Basic/Visualization/CaptureLiveVis3D
     Applications/Basic/Visualization/CaptureVis3D
     Applications/Basic/Visualization/CaptureHDRLoop
     Applications/Basic/Visualization/ReadPCLVis3D
@@ -35,7 +34,7 @@ set(SAMPLES
 set(Eigen3_DEPENDING Downsample UtilizeEyeInHandCalibration PoseConversions)
 set(PCL_DEPENDING ReadPCLVis3D CaptureWritePCLVis3D CaptureFromFileWritePCLVis3D ZDF2PCD)
 set(OpenCV_DEPENDING ZDF2OpenCV CaptureUndistortRGB UtilizeEyeInHandCalibration PoseConversions)
-set(Vis3D_DEPENDING CaptureVis3D CaptureLiveVis3D CaptureFromFileVis3D Downsample CaptureFromFileWritePCLVis3D CaptureWritePCLVis3D ZDF2OpenCV CaptureHDRLoop CaptureHDRCompleteSettings ReadIterateZDF CaptureUndistortRGB)
+set(Vis3D_DEPENDING CaptureVis3D CaptureFromFileVis3D Downsample CaptureFromFileWritePCLVis3D CaptureWritePCLVis3D ZDF2OpenCV CaptureHDRLoop CaptureHDRCompleteSettings ReadIterateZDF CaptureUndistortRGB)
 
 find_package(Zivid ${ZIVID_VERSION} COMPONENTS Core REQUIRED)
 

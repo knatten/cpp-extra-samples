@@ -16,7 +16,6 @@ int main()
 
         std::cout << "Setting up visualization" << std::endl;
         Zivid::CloudVisualizer vis;
-        zivid.setDefaultComputeDevice(vis.computeDevice());
 
         const std::string Filename = "Zivid3D.zdf";
         std::cout << "Reading " << Filename << " point cloud" << std::endl;
@@ -31,7 +30,7 @@ int main()
         vis.run();
 
         // Extracting point cloud from the frame
-        const auto pointCloud = frame.getPointCloud();
+        const auto pointCloud = frame.pointCloud();
 
         std::cout << "Point cloud information:" << std::endl;
         std::cout << "Number of points: " << pointCloud.size() << "\n"
@@ -45,12 +44,12 @@ int main()
             for(size_t j = (pointCloud.width() - pixelsToDisplay) / 2; j < (pointCloud.width() + pixelsToDisplay) / 2;
                 j++)
             {
-                const auto &point = pointCloud(i, j);
-
-                std::cout << std::setprecision(1) << std::fixed << "Values at pixel (" << i << ", " << j << "):"
-                          << "    X:" << point.x << "  Y:" << point.y << "  Z:" << point.z
-                          << "    R:" << static_cast<int>(point.red()) << "  G:" << static_cast<int>(point.green())
-                          << "  B:" << static_cast<int>(point.blue()) << "    Contrast:" << point.contrast << std::endl;
+//                const auto &point = pointCloud(i, j);
+//
+//                std::cout << std::setprecision(1) << std::fixed << "Values at pixel (" << i << ", " << j << "):"
+//                          << "    X:" << point.x << "  Y:" << point.y << "  Z:" << point.z
+//                          << "    R:" << static_cast<int>(point.red()) << "  G:" << static_cast<int>(point.green())
+//                          << "  B:" << static_cast<int>(point.blue()) << "    Contrast:" << point.contrast << std::endl;
             }
         }
     }

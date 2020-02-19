@@ -22,7 +22,6 @@ int main()
 
         std::cout << "Setting up visualization" << std::endl;
         Zivid::CloudVisualizer vis;
-        zivid.setDefaultComputeDevice(vis.computeDevice());
 
         std::cout << "Connecting to the camera" << std::endl;
         auto camera = zivid.connectCamera();
@@ -54,14 +53,14 @@ int main()
 
         for(size_t i = 0; i < cloud.points.size(); ++i)
         {
-            auto Point = PointCloud.operator()(i);
-
-            cloud.points[i].x = Point.x;
-            cloud.points[i].y = Point.y;
-            cloud.points[i].z = Point.z;
-            cloud.points[i].r = Point.red();
-            cloud.points[i].g = Point.green();
-            cloud.points[i].b = Point.blue();
+//            auto Point = PointCloud.operator()(i);
+//
+//            cloud.points[i].x = Point.x;
+//            cloud.points[i].y = Point.y;
+//            cloud.points[i].z = Point.z;
+//            cloud.points[i].r = Point.red();
+//            cloud.points[i].g = Point.green();
+//            cloud.points[i].b = Point.blue();
         }
 
         //Simple Cloud Visualization

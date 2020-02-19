@@ -16,7 +16,6 @@ int main()
 
         std::cout << "Setting up visualization" << std::endl;
         Zivid::CloudVisualizer vis;
-        zivid.setDefaultComputeDevice(vis.computeDevice());
 
         std::cout << "Connecting to the camera" << std::endl;
         auto camera = zivid.connectCamera();

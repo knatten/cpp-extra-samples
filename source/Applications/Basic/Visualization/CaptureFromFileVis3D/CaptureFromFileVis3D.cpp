@@ -14,7 +14,6 @@ int main()
 
         std::cout << "Setting up visualization" << std::endl;
         Zivid::CloudVisualizer vis;
-        zivid.setDefaultComputeDevice(vis.computeDevice());
 
         auto zdfFile = Zivid::Environment::dataPath() + "/MiscObjects.zdf";
 
